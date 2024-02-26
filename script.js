@@ -11,11 +11,12 @@ function getComputerChoice() {
   }
 }
 
-//Variables declarations.
-let computerSelection = getComputerChoice();
-let playerSelection = prompt("Choose: rock, paper or scissors.");
+//Score Variables declarations.
 let computerScore = 0;
 let playerScore = 0;
+//Competitors Selections.
+let computerSelection;
+let playerSelection;
 
 //To play single round and get the winner for the round.
 function playSingleRound(playerSelection, computerSelection) {
@@ -67,4 +68,30 @@ function playSingleRound(playerSelection, computerSelection) {
   }
 }
 
-playSingleRound(playerSelection, computerSelection);
+//Play 5 rounds and determine the winner.
+function playGame() {
+  for (let index = 0; index < 5; index++) {
+    computerSelection = getComputerChoice();
+    playerSelection = prompt("Choose: rock, paper or scissors.");
+    playSingleRound(playerSelection, computerSelection);
+  }
+
+  if (playerScore > computerScore) {
+    console.log(
+      "Player Score: " + playerScore + " | Computer Score: " + computerScore
+    );
+    console.log("Player WINS!");
+  } else if (computerScore > playerScore) {
+    console.log(
+      "Player Score: " + playerScore + " | Computer Score: " + computerScore
+    );
+    console.log("Computer WINS!");
+  } else {
+    console.log(
+      "Player Score: " + playerScore + " | Computer Score: " + computerScore
+    );
+    console.log("DRAW!");
+  }
+}
+
+playGame();
