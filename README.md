@@ -11,3 +11,10 @@ Skills to be demonstrated:-
 - JavaScript Developer Tools Use.
 - Functions Use.
 - Problem Solving.
+
+New skills to be demonstrated:-
+
+- Git branching
+- Git merge
+- EventListeners
+- DOM
