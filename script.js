@@ -70,28 +70,13 @@ function playSingleRound(playerSelection, computerSelection) {
 
 //Play 5 rounds and determine the winner.
 function playGame() {
-  for (let index = 0; index < 5; index++) {
-    computerSelection = getComputerChoice();
-    playerSelection = prompt("Choose: rock, paper or scissors.");
-    playSingleRound(playerSelection, computerSelection);
-  }
+  const buttons = document.querySelectorAll("button");
 
-  if (playerScore > computerScore) {
-    console.log(
-      "Player Score: " + playerScore + " | Computer Score: " + computerScore
-    );
-    console.log("Player WINS!");
-  } else if (computerScore > playerScore) {
-    console.log(
-      "Player Score: " + playerScore + " | Computer Score: " + computerScore
-    );
-    console.log("Computer WINS!");
-  } else {
-    console.log(
-      "Player Score: " + playerScore + " | Computer Score: " + computerScore
-    );
-    console.log("DRAW!");
-  }
+  buttons.forEach((button) => {
+    button.addEventListener("click", () => {
+      playSingleRound(button.id, getComputerChoice());
+    });
+  });
 }
 
 playGame();
